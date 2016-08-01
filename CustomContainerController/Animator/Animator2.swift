@@ -1,5 +1,5 @@
 //
-//  Animatior2.swift
+//  Animator2.swift
 //  CustomContainerController
 //
 //  Created by MiaoChao on 16/6/5.
@@ -11,7 +11,7 @@ import UIKit
 private let kDamping :CGFloat = 0.75
 private let kInitialSpringVelocity :CGFloat = 0.5
 
-class Animatior2: NSObject,UIViewControllerAnimatedTransitioning {
+class Animator2: NSObject,UIViewControllerAnimatedTransitioning {
     // MARK:UIViewControllerAnimatedTransitioning
     func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
         return 0.75;
@@ -23,7 +23,7 @@ class Animatior2: NSObject,UIViewControllerAnimatedTransitioning {
         
         var toView :UIView?
         var fromView :UIView?
-        if transitionContext.respondsToSelector(Selector("viewForKey:")) {
+        if transitionContext.respondsToSelector(#selector(UIViewControllerTransitionCoordinatorContext.viewForKey(_:))) {
             toView = transitionContext.viewForKey(UITransitionContextToViewKey)
             fromView = transitionContext.viewForKey(UITransitionContextFromViewKey)
         } else {
@@ -48,10 +48,9 @@ class Animatior2: NSObject,UIViewControllerAnimatedTransitioning {
             fromView?.alpha = 0
             toView?.transform = CGAffineTransformIdentity
             toView?.alpha = 1
-            }) { (finish) -> Void in
-                fromView?.transform = CGAffineTransformIdentity
-                transitionContext.completeTransition(!transitionContext.transitionWasCancelled());
-
+        }) { (finish) -> Void in
+            fromView?.transform = CGAffineTransformIdentity
+            transitionContext.completeTransition(!transitionContext.transitionWasCancelled());
         }
     }
 }

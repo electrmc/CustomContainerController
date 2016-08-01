@@ -14,8 +14,13 @@ class ChildViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let label: UILabel = UILabel(frame: CGRectMake(100, 200, 60, 30))
+        label.backgroundColor = UIColor.clearColor()
+        label.text = self.title
+        self.view.addSubview(label)
     }
-
+    /*
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         print("viewWillAppear")
@@ -43,7 +48,7 @@ class ChildViewController: UIViewController {
     override func willMoveToParentViewController(parent: UIViewController?) {
         print("willMoveToParentViewController")
     }
-    
+    */
     override func frameInParentController(parentController: UIViewController) -> CGRect {
         var frame = parentController.view.bounds
         frame.size.height = frame.size.height / 2

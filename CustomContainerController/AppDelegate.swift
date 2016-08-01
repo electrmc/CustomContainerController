@@ -9,18 +9,17 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate,ContainerViewControllerDelegate {
-
+class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
-
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         self.window = UIWindow.init(frame: UIScreen.mainScreen().bounds)
         self.window?.backgroundColor = UIColor.lightGrayColor()
         let childViewControllers =  self.configuredChildViewControllers()
-        let containerVC:ContainerViewController = ContainerViewController(viewContrllers: childViewControllers)
-        containerVC.delegate = self
-        self.window?.rootViewController = containerVC        
+        let containerVC: CustomTabrViewController = CustomTabrViewController(viewContrllers: childViewControllers)
+        let defaultTranistionDelegate = DefaultContainerTransitionDelegate()
+        containerVC.containerTransitionDelegate = defaultTranistionDelegate
+        self.window?.rootViewController = containerVC
         self.window?.makeKeyAndVisible()
         return true
     }
@@ -39,11 +38,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate,ContainerViewControllerDel
         }
         return childViewContollers
     }
-    
-    // MARK: ContainerViewControllerDelegate
-    func containerViewController(containerViewController: ContainerViewController, animationControllerForTransitionFromViewController fromViewController: UIViewController, toViewControlller: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return Animatior2()
-    }
-
 }
 

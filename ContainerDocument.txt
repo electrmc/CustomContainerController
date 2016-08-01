@@ -1,3 +1,11 @@
+问题：
+2016-07-17 16:44:17.927 CustomContainerController[6607:1147618] unexpected nil window in _UIApplicationHandleEventFromQueueEvent, _windowServerHitTestWindow: <UIWindow: 0x7fbc09f23390; frame = (0 0; 320 568); gestureRecognizers = <NSArray: 0x7fbc09f20c50>; layer = <UIWindowLayer: 0x7fbc09f231c0>>
+Right progress : 0.103125
+
+
+
+
+
 
 UIViewControllerTransitioningDelegate
 负责转场的协议。非交互式和交互式的转场都是由实现该协议的代理控制。其中有两个方法是控制专场动画，两个方法是控制交互进度。

@@ -7,25 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4C02BD0A1CE391FF0072369E /* PrivateTransitionContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C02BD091CE391FF0072369E /* PrivateTransitionContext.swift */; };
 		4C4286831CDE509C004D9A01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4286821CDE509C004D9A01 /* AppDelegate.swift */; };
 		4C42868A1CDE509C004D9A01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C4286891CDE509C004D9A01 /* Assets.xcassets */; };
-		4C4286951CDE519A004D9A01 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4286941CDE519A004D9A01 /* ContainerViewController.swift */; };
 		4C4286971CDE5B07004D9A01 /* ChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4286961CDE5B07004D9A01 /* ChildViewController.swift */; };
-		4CB148F21CEE2FD60065D6E5 /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB148F11CEE2FD60065D6E5 /* Animator.swift */; };
-		4CC4667D1D03E55D00C2C3AD /* Animatior2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC4667C1D03E55D00C2C3AD /* Animatior2.swift */; };
+		4C5914371D3BE93A00040670 /* Animator1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5914361D3BE93A00040670 /* Animator1.swift */; };
+		4C5D1D2D1D3B591C008B3B1F /* ContainerTransitionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5D1D291D3B591C008B3B1F /* ContainerTransitionDelegate.swift */; };
+		4C5D1D2E1D3B591C008B3B1F /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5D1D2A1D3B591C008B3B1F /* ContainerViewController.swift */; };
+		4C5D1D2F1D3B591C008B3B1F /* PercentDrivenInteractiveTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5D1D2B1D3B591C008B3B1F /* PercentDrivenInteractiveTransition.swift */; };
+		4C5D1D301D3B591C008B3B1F /* PrivateTransitionContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5D1D2C1D3B591C008B3B1F /* PrivateTransitionContext.swift */; };
+		4C5D1D341D3B5927008B3B1F /* Animator2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5D1D321D3B5927008B3B1F /* Animator2.swift */; };
+		4C5D1D351D3B5927008B3B1F /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5D1D331D3B5927008B3B1F /* Animator.swift */; };
+		4C5D1D371D3B599D008B3B1F /* CustomTabrViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5D1D361D3B599D008B3B1F /* CustomTabrViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4C02BD091CE391FF0072369E /* PrivateTransitionContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivateTransitionContext.swift; sourceTree = "<group>"; };
 		4C42867F1CDE509C004D9A01 /* CustomContainerController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomContainerController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C4286821CDE509C004D9A01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C4286891CDE509C004D9A01 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4C42868E1CDE509C004D9A01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4C4286941CDE519A004D9A01 /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		4C4286961CDE5B07004D9A01 /* ChildViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChildViewController.swift; sourceTree = "<group>"; };
-		4CB148F11CEE2FD60065D6E5 /* Animator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
-		4CC4667C1D03E55D00C2C3AD /* Animatior2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animatior2.swift; sourceTree = "<group>"; };
+		4C5914361D3BE93A00040670 /* Animator1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animator1.swift; sourceTree = "<group>"; };
+		4C5D1D291D3B591C008B3B1F /* ContainerTransitionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerTransitionDelegate.swift; sourceTree = "<group>"; };
+		4C5D1D2A1D3B591C008B3B1F /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
+		4C5D1D2B1D3B591C008B3B1F /* PercentDrivenInteractiveTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PercentDrivenInteractiveTransition.swift; sourceTree = "<group>"; };
+		4C5D1D2C1D3B591C008B3B1F /* PrivateTransitionContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivateTransitionContext.swift; sourceTree = "<group>"; };
+		4C5D1D321D3B5927008B3B1F /* Animator2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animator2.swift; sourceTree = "<group>"; };
+		4C5D1D331D3B5927008B3B1F /* Animator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
+		4C5D1D361D3B599D008B3B1F /* CustomTabrViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabrViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,16 +66,36 @@
 		4C4286811CDE509C004D9A01 /* CustomContainerController */ = {
 			isa = PBXGroup;
 			children = (
+				4C5D1D311D3B5927008B3B1F /* Animator */,
+				4C5D1D281D3B591C008B3B1F /* BaseClass */,
 				4C4286821CDE509C004D9A01 /* AppDelegate.swift */,
-				4C4286941CDE519A004D9A01 /* ContainerViewController.swift */,
+				4C5D1D361D3B599D008B3B1F /* CustomTabrViewController.swift */,
 				4C4286961CDE5B07004D9A01 /* ChildViewController.swift */,
-				4C02BD091CE391FF0072369E /* PrivateTransitionContext.swift */,
-				4CB148F11CEE2FD60065D6E5 /* Animator.swift */,
-				4CC4667C1D03E55D00C2C3AD /* Animatior2.swift */,
 				4C4286891CDE509C004D9A01 /* Assets.xcassets */,
 				4C42868E1CDE509C004D9A01 /* Info.plist */,
 			);
 			path = CustomContainerController;
+			sourceTree = "<group>";
+		};
+		4C5D1D281D3B591C008B3B1F /* BaseClass */ = {
+			isa = PBXGroup;
+			children = (
+				4C5D1D2A1D3B591C008B3B1F /* ContainerViewController.swift */,
+				4C5D1D2C1D3B591C008B3B1F /* PrivateTransitionContext.swift */,
+				4C5D1D291D3B591C008B3B1F /* ContainerTransitionDelegate.swift */,
+				4C5D1D2B1D3B591C008B3B1F /* PercentDrivenInteractiveTransition.swift */,
+			);
+			path = BaseClass;
+			sourceTree = "<group>";
+		};
+		4C5D1D311D3B5927008B3B1F /* Animator */ = {
+			isa = PBXGroup;
+			children = (
+				4C5D1D321D3B5927008B3B1F /* Animator2.swift */,
+				4C5914361D3BE93A00040670 /* Animator1.swift */,
+				4C5D1D331D3B5927008B3B1F /* Animator.swift */,
+			);
+			path = Animator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,12 +168,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4CB148F21CEE2FD60065D6E5 /* Animator.swift in Sources */,
-				4C02BD0A1CE391FF0072369E /* PrivateTransitionContext.swift in Sources */,
-				4C4286951CDE519A004D9A01 /* ContainerViewController.swift in Sources */,
+				4C5D1D301D3B591C008B3B1F /* PrivateTransitionContext.swift in Sources */,
 				4C4286831CDE509C004D9A01 /* AppDelegate.swift in Sources */,
+				4C5D1D371D3B599D008B3B1F /* CustomTabrViewController.swift in Sources */,
+				4C5D1D2D1D3B591C008B3B1F /* ContainerTransitionDelegate.swift in Sources */,
+				4C5D1D2F1D3B591C008B3B1F /* PercentDrivenInteractiveTransition.swift in Sources */,
+				4C5D1D351D3B5927008B3B1F /* Animator.swift in Sources */,
+				4C5D1D2E1D3B591C008B3B1F /* ContainerViewController.swift in Sources */,
 				4C4286971CDE5B07004D9A01 /* ChildViewController.swift in Sources */,
-				4CC4667D1D03E55D00C2C3AD /* Animatior2.swift in Sources */,
+				4C5914371D3BE93A00040670 /* Animator1.swift in Sources */,
+				4C5D1D341D3B5927008B3B1F /* Animator2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,6 +272,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = CustomContainerController/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MiaoChao.CustomContainerController;
@@ -252,6 +285,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = CustomContainerController/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MiaoChao.CustomContainerController;
