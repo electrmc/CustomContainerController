@@ -7,21 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C02BD0A1CE391FF0072369E /* PrivateTransitionContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C02BD091CE391FF0072369E /* PrivateTransitionContext.swift */; };
 		4C4286831CDE509C004D9A01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4286821CDE509C004D9A01 /* AppDelegate.swift */; };
-		4C4286851CDE509C004D9A01 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4286841CDE509C004D9A01 /* ViewController.swift */; };
-		4C4286881CDE509C004D9A01 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C4286861CDE509C004D9A01 /* Main.storyboard */; };
 		4C42868A1CDE509C004D9A01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C4286891CDE509C004D9A01 /* Assets.xcassets */; };
-		4C42868D1CDE509C004D9A01 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C42868B1CDE509C004D9A01 /* LaunchScreen.storyboard */; };
+		4C4286951CDE519A004D9A01 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4286941CDE519A004D9A01 /* ContainerViewController.swift */; };
+		4C4286971CDE5B07004D9A01 /* ChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4286961CDE5B07004D9A01 /* ChildViewController.swift */; };
+		4CB148F21CEE2FD60065D6E5 /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB148F11CEE2FD60065D6E5 /* Animator.swift */; };
+		4CC4667D1D03E55D00C2C3AD /* Animatior2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC4667C1D03E55D00C2C3AD /* Animatior2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4C02BD091CE391FF0072369E /* PrivateTransitionContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivateTransitionContext.swift; sourceTree = "<group>"; };
 		4C42867F1CDE509C004D9A01 /* CustomContainerController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomContainerController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C4286821CDE509C004D9A01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4C4286841CDE509C004D9A01 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		4C4286871CDE509C004D9A01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4C4286891CDE509C004D9A01 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		4C42868C1CDE509C004D9A01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4C42868E1CDE509C004D9A01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C4286941CDE519A004D9A01 /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
+		4C4286961CDE5B07004D9A01 /* ChildViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChildViewController.swift; sourceTree = "<group>"; };
+		4CB148F11CEE2FD60065D6E5 /* Animator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
+		4CC4667C1D03E55D00C2C3AD /* Animatior2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animatior2.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,10 +59,12 @@
 			isa = PBXGroup;
 			children = (
 				4C4286821CDE509C004D9A01 /* AppDelegate.swift */,
-				4C4286841CDE509C004D9A01 /* ViewController.swift */,
-				4C4286861CDE509C004D9A01 /* Main.storyboard */,
+				4C4286941CDE519A004D9A01 /* ContainerViewController.swift */,
+				4C4286961CDE5B07004D9A01 /* ChildViewController.swift */,
+				4C02BD091CE391FF0072369E /* PrivateTransitionContext.swift */,
+				4CB148F11CEE2FD60065D6E5 /* Animator.swift */,
+				4CC4667C1D03E55D00C2C3AD /* Animatior2.swift */,
 				4C4286891CDE509C004D9A01 /* Assets.xcassets */,
-				4C42868B1CDE509C004D9A01 /* LaunchScreen.storyboard */,
 				4C42868E1CDE509C004D9A01 /* Info.plist */,
 			);
 			path = CustomContainerController;
@@ -123,9 +129,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C42868D1CDE509C004D9A01 /* LaunchScreen.storyboard in Resources */,
 				4C42868A1CDE509C004D9A01 /* Assets.xcassets in Resources */,
-				4C4286881CDE509C004D9A01 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,31 +140,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C4286851CDE509C004D9A01 /* ViewController.swift in Sources */,
+				4CB148F21CEE2FD60065D6E5 /* Animator.swift in Sources */,
+				4C02BD0A1CE391FF0072369E /* PrivateTransitionContext.swift in Sources */,
+				4C4286951CDE519A004D9A01 /* ContainerViewController.swift in Sources */,
 				4C4286831CDE509C004D9A01 /* AppDelegate.swift in Sources */,
+				4C4286971CDE5B07004D9A01 /* ChildViewController.swift in Sources */,
+				4CC4667D1D03E55D00C2C3AD /* Animatior2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		4C4286861CDE509C004D9A01 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4C4286871CDE509C004D9A01 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		4C42868B1CDE509C004D9A01 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4C42868C1CDE509C004D9A01 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		4C42868F1CDE509C004D9A01 /* Debug */ = {
@@ -250,6 +239,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				INFOPLIST_FILE = CustomContainerController/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MiaoChao.CustomContainerController;
@@ -261,6 +251,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				INFOPLIST_FILE = CustomContainerController/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MiaoChao.CustomContainerController;
@@ -287,6 +278,7 @@
 				4C4286931CDE509C004D9A01 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

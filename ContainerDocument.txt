@@ -1,0 +1,88 @@
+
+UIViewControllerTransitioningDelegate
+负责转场的协议。非交互式和交互式的转场都是由实现该协议的代理控制。其中有两个方法是控制专场动画，两个方法是控制交互进度。
+
+UIViewControllerAnimatedTransitioning
+转场动画协议。两个必须实现的方法，一个决定动画持续时间，一个决定转场动画。
+
+UIViewControllerInteractiveTransitioning
+交互式转场协议。该协议控制交互转场如何操作，不过该协议一般不需要我们自定义类来实现，因为系统已用UIPercentDrivenInteractiveTransition实现了该协议。
+
+UIPercentDrivenInteractiveTransition : NSObject
+系统实现了交互转场协议的类。通常我们只需要子类化该类返回给UIViewControllerAnimatedTransitioning协议中的方法即可。
+
+
+UIViewControllerContextTransitioning
+animateTransition方法的核心则是从转场动画上下文获取必要的信息以完成动画。上下文是一个实现了UIViewControllerContextTransitioning的对象，它的作用在于为animateTransition方法提供必备的信息。您不应该缓存任何关于动画的信息，而是应该总是从转场动画上下文中获取(比如fromView和toView)，这样可以保证总是获取到最新的、正确的信息。苹果文档说明，这个协议我们是不能实现的。
+
+造成黑屏的原因：
+1，当设置了transitioningDelegate后，如果delegate被释放了，那么视图返回会就黑屏。
+2，视图出现和消失分别设置了不同的transitioningDelegate
+
+如果interactionControllerForPresentation:animator:返回了非空值，说明是交互式动画，这时就必须调用交互式动画的更新方法，否则，视图动画不会进行，会停在开始。
+
+
+容器控制器分为两部分：
+1，自定义系统框架的转场动画：
+	1，自定义NavigationController的转场动画；
+	2，自定义tabbarViewController的转场动画；
+	3，自定义PresentViewController的转场动画；
+2，自定义容器控制器，分为两部分：
+	1，容器控制器的层次结构；
+	2，容器控制器和子控制器的事件传递；
+	3，自定义的转场动画。
+在定制系统的转场动画时，系统会生成一个遵循UIViewControllerContextTransitioning的对象，并传给TransitioningDelegate的动画对象。自定义容器控制器时，我们就需要代替系统生成一个遵循UIViewControllerContextTransitioning的对象，传给我们自定义的动画对象。
+
+---------------------------------------------------
+添加子控制器：
+1,容器控制器调用selector(addChildViewController:)。此时系统会知道容器控制器会管理子视图控制器。
+   同时系统会自动调用子视图的@selector(willMoveToParentViewController:)。
+2,设置好子控制器根视图的frame，把子控制器的根视图添加到容器控制器的视图层次结构中。注意，并不是添加到容器控制器的根视图。
+3,此时添加AutoLayout的限制。但是此处的限制应该只对子控制器的根视图有作用。
+4,调用子视图的@selector(didMoveToParentViewController:)。
+
+添加子控制器时AppearanceCallBack的调用顺序：
+1）User   - 手动调用container的self.addChildViewController(childController)
+2）System - 系统调用子控制器的willMoveToParentViewController:
+3）User   - 手动调用container的addSubview(childController.rootView)
+4）System - 系统调用子控制器的viewWillAppear
+5）User   - 手动调用子视图的didMoveToParentViewController
+6）System - 系统调用子控制器的viewDidAppear。
+   注意：该方法会等didMoveToParentViewController所在的方法执行完成后才会被系统执行。
+
+移除子控制器
+1,调用子控制器的@selector(willMoveToParentViewController:)，参数必须是nil.
+2,移除为子控制器添加的任何AutoLayout的限制
+3,从视图层次中移除子控制器的视图
+4,调用子控制器的@selector(removeFromParentViewController)
+    
+移除子控制器时AppearanceCallBack的调用顺序：
+1）User   - 手动调用子控制器的willMoveToParentViewController(nil)，此处参数必须是nil
+2）User   - 手动调用子控制的view.removeFromSuperview()，移除子控制器的视图
+3）System - 系统调用子控制器的viewWillDisappear
+4）User   - 手动调用子控制器的removeFromParentViewController
+5）System - 系统调用子控制器的viewDidDisappear
+	注意：该方法与viewDidAppear相似，直到removeFromParentViewController所在的方法执行完后才会被系统调用
+
+---------------------------------------------------
+
+自定义容器控制器设计规则：
+1，容器控制器与子控制器，子控制器与子控制器之间特殊事件传递（不包含系统的事件）。
+
+2，容器控制器添加子控制器，以及其内部子控制器rootView的frame改变时，容器控制器的ContentView的bounds也要改变。
+   1）同时只显示一个子控制器时，子控制器rootView的frame由容器控制器决定。 
+   2）同时显示多个子控制器时，子控制器rootView的frame由自己决定。
+   方案：
+   1，容器控制器的内容视图是一个scrollview。
+   2，容器控制器添加子控制器时，默认会把该子控制器rootView的大小调整与自己相同。如果子控制器自定义了frame，那么就采用子控制器的特定的frame，类似于addSubview之前都会设定要添加view的frame。
+   3，容器控制器的bounds会随着子控制器的个数以及每个子控制器view的改变而改变。容器控制器通过KVO检测子控制器frame的改变。
+   这个方案适用于容器控制器的嵌套。
+3，显示规则：子控制器是在容器控制器创建时就已决定，还是在容器控制器创建完成后感觉其他条件创建子控制器。
+4，难点是容器控制器的嵌套，可以用indexpath来解决
+5，自定义系统的回调，因为有时候不想用
+6，指定显示某一个子控制器，可以把该控制器往下传，当子控制器出现时，通知容器控制器来frame。这里就涉及到子控制器的唯一标示！
+   那么指定盘口的功能也可以用配置的方式，在子控制器创建时来指定显示哪一个控制器。
+
+第一阶段：实现容器控制器的添加和删除。
+第二阶段：实现容器控制器动画的添加和删除。
+第三阶段：实现接口，把转场的代理接口以及创建转场中用到的上下文对象。
