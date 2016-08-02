@@ -53,7 +53,7 @@ ViewController作为MVC中的C，它负责根据相应的场景协调View和Mode
 ####2，为子控制器添加动画
 其实理论上，上面就已经完成了自定义容器控制器的过程。但是如果想实现动画的出现和消失，以及手势的切换就需要用比较多内容（本文并未实现手势）。添加动画只是把上述无动画切换过程中的第三步（把toView添加到容器控制器的containerView上）交给了动画执行器来完成，其他基本不动。</br>
 盗一张图来说明动画的过程：
-![](http://upload-images.jianshu.io/upload_images/1171077-c7063911bc07d0e8.png?imageMogr2/auto-orient/strip%7CimageView2/2)
+![](https://github.com/electrmc/CustomContainerController/blob/master/Introduction/动画转场过程.png)
 简单来说，要完成动画的转场，容器控制器是做不到的。它只能委托动画执行器来完成。这个过程中它提供各个控制器和视图转场前的状态以及转场后想要的状态，也就是转场上下文。动画执行器拿到该上下文，完成动画。
 ######视图控制器动画切换的过程
 <pre>
